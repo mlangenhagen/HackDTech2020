@@ -107,9 +107,12 @@ const styles = StyleSheet.create({
     textAlign:'center',},
 
    mapStyle: {
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
-  },
+    marginTop:10,
+    borderRadius:10,
+    borderWidth: 1,
+    borderColor: '#fff',
+    width: 360,
+    height: 300  },
 
 })
 
