@@ -11,6 +11,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { Marker } from 'react-native-maps';
 import { createStackNavigator } from '@react-navigation/stack';
 import MapView from "react-native-maps";
+import {Marker} from 'react-native-maps';
 import {LineChart} from "react-native-chart-kit";
 
 function HomeScreen({ navigation }) {
