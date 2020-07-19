@@ -94,6 +94,8 @@ function PositiveScreen({ navigation }) {
 
 
 function MapScreen({ navigation }) {
+
+
   return (
 
    <View style={styles.container}>
@@ -189,6 +191,8 @@ function HealthScreen({ navigation }) {
     </View>
   );
 }
+
+
 
 
 const Stack = createStackNavigator();
