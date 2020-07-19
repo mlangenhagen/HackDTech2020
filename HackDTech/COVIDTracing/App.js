@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { StyleSheet, TouchableOpacity,Button, View, Text, Dimensions } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
+import { Marker } from 'react-native-maps';
 import { createStackNavigator } from '@react-navigation/stack';
 import MapView from "react-native-maps";
 import {LineChart} from "react-native-chart-kit";
@@ -30,8 +31,45 @@ function HomeScreen({ navigation }) {
 function MapScreen({ navigation }) {
   return (
 
-    <View style={styles.container}>
-        <MapView style={styles.mapStyle} />
+   <View style={styles.container}>
+        <MapView 
+	  style={styles.mapStyle} 
+	  initialRegion={{
+	        latitude: 37.78825,
+          	longitude: -122.4324,      
+          	latitudeDelta: 0.0922,
+          	longitudeDelta: 0.0421,	
+	  }}>
+
+	<Marker
+          coordinate={{latitude: 37.78825, longitude: -122.4324}}
+          title="TESTED POSITIVE: July 17th"
+          description="Visited: July 14th, 12:04pm"
+        />
+
+	<Marker
+          coordinate={{latitude: 37.79825, longitude: -122.4334}}
+          title="TESTED POSITIVE: July 14th"
+          description="Visited: July 11th, 11:36am"
+        />
+
+	
+	<Marker
+          coordinate={{latitude: 37.79835, longitude: -122.4344}}
+          title="TESTED POSITIVE: July 16th"
+          description="Visited: July 15th, 2:22pm"
+        />
+
+	<Marker
+          coordinate={{latitude: 37.79635, longitude: -122.4244}}
+          title="TESTED POSITIVE: July 12th"
+          description="Visited: July 18th, 6:19pm"
+        />
+
+
+
+       </MapView>
+
     </View>
     
   );
