@@ -3,6 +3,7 @@ import { StyleSheet, TouchableOpacity,Button, View, Text, Dimensions } from 'rea
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import MapView from "react-native-maps";
+import {LineChart} from "react-native-chart-kit";
 
 function HomeScreen({ navigation }) {
   return (
@@ -37,9 +38,50 @@ function MapScreen({ navigation }) {
 }
 
 function HealthScreen({ navigation }) {
+
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Button title="Go back" onPress={() => navigation.goBack()} />
+      <Text>My Temperature</Text>
+        <LineChart
+          data={{
+            labels: ["7/1", "7/5", "7/10", "7/15"],
+            datasets: [
+              {
+                data: [
+                  98.7,
+                  99.3,
+                  99.8,
+                  97.9
+                ]
+              }
+            ]
+          }}
+          width={Dimensions.get("window").width} // from react-native
+          height={220}
+          yAxisLabel=""
+          yAxisSuffix="°F"
+          yAxisInterval={1} // optional, defaults to 1
+          chartConfig={{
+            backgroundColor: "#e26a00",
+            backgroundGradientFrom: "#005da1",
+            backgroundGradientTo: "#1f5d7f",
+            decimalPlaces: 1, // optional, defaults to 2dp
+            color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+            labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+            style: {
+              borderRadius: 15
+            },
+            propsForDots: {
+              r: "6",
+              strokeWidth: "2",
+              stroke: "#ffa726"
+            }
+          }}
+          style={{
+            marginVertical: 8,
+            borderRadius: 10
+          }}
+        />
     </View>
   );
 }
