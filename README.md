@@ -1,1 +1,1 @@
-# HackDTech2020 ReadMe
+# Covid Tracing App
