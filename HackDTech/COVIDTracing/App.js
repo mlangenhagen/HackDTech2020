@@ -1,3 +1,10 @@
+//Borrowed code from:
+//	https://reactnavigation.org/docs/navigating/
+//	https://medium.com/@arvind.chak128/how-to-auto-zoom-into-your-current-location-using-react-native-maps-88f9b3063fe7
+//	https://github.com/react-native-community/react-native-maps
+
+
+
 import * as React from 'react';
 import { StyleSheet, TouchableOpacity,Button, View, Text, Dimensions } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
@@ -90,6 +97,7 @@ function MapScreen({ navigation }) {
   return (
 
    <View style={styles.container}>
+      <Text>Positive Test Cases Near Me</Text>
         <MapView 
 	  style={styles.mapStyle} 
 	  initialRegion={{
@@ -255,8 +263,8 @@ const styles = StyleSheet.create({
     borderRadius:10,
     borderWidth: 1,
     borderColor: '#fff',
-	width: 300,
-	  height: 100
+    width: 300,
+    height: 100
   },
 
    buttonText: {
